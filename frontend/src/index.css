@@ -1,0 +1,55 @@
+/* 1. IMPORT FONTS (Ditambah variasi Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:ital,wght@1,900&display=swap');
+
+/* 2. TAILWIND DIRECTIVES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. BASE STYLES - Default semua teks pakai Inter */
+body {
+  font-family: 'Inter', sans-serif;
+  @apply antialiased;
+}
+
+/* 4. BRAND IDENTITY - Khusus Logo/Header */
+.font-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.05em;
+}
+
+/* --- LOGO LASER STROKE --- */
+@keyframes laserFlow {
+  0% { background-position: 100% 0%; }
+  100% { background-position: -100% 0%; }
+}
+
+.logo-corporate {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  /* Hilangkan glow neon, ganti dengan bayangan lembut */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  display: inline-block;
+  line-height: 1.2;
+}
+
+/* Base body biar lebih 'clean' korporat */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. GLOBAL ANIMATIONS */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
